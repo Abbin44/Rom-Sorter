@@ -1,0 +1,32 @@
+﻿<Window x:Class="Rom_Sorter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rom_Sorter"
+        mc:Ignorable="d" FontFamily="LED" Background="#FF252525" Width="524" Height="195">
+    <Grid HorizontalAlignment="Left" Width="524" Height="166" VerticalAlignment="Top" Margin="0,0,-8,-2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="28*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="moveFilesChk" Content="Move all files to root folder" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Background="#FFD35C24" Foreground="#FF0197FF" FontFamily="Verdana" Grid.Column="1" Height="15" Width="177"/>
+        <Button x:Name="browseDir" Content="Browse" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Background="#FFD35C24" Foreground="Black" Click="browseDir_Click" FontFamily="Verdana" Height="22"/>
+        <TextBox x:Name="filePathBox" Height="21" Margin="10,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontFamily="Verdana" Foreground="#FF0197FF" Background="#FF212121" HorizontalAlignment="Left" Grid.Row="1"/>
+        <ComboBox x:Name="regionMenu"  Margin="151,35,0,0" FontFamily="Verdana" Foreground="#FF0197FF" Background="#FF212121" Grid.Row="1" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150">
+            <ListBoxItem Background="#FF212121" Content="Europe"/>
+            <ListBoxItem Background="#FF212121" Content="USA"/>
+            <ListBoxItem Background="#FF212121" Content="Japan"/>
+            <ListBoxItem Background="#FF212121" Content="Other"/>
+        </ComboBox>
+        <Label Content="or enter file path manually" HorizontalAlignment="Left" Margin="85,8,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="#FF0197FF" Height="25" Width="171"/>
+        <Label Content="Select region to keep" Margin="0,0,166,13" FontFamily="Verdana" Foreground="#FF0197FF" Height="27" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button x:Name="sortBtn" Content="Sort" Margin="10,10,57,0" Foreground="Black" FontFamily="Verdana" Background="#FFD35C24" Click="sortBtn_Click" Grid.Row="2" Height="28" VerticalAlignment="Top"/>
+        <Label Content="WARNING: The program will&#xD;&#xA;remove all files except files &#xD;&#xA;containing the selected region.&#xD;&#xA;PLACE ALL ROMS IN A &#xD;&#xA;SEPERATE FOLDER" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.162,-0.022" FontFamily="Verdana" Foreground="#FFFF0101" Height="86" VerticalAlignment="Top" HorizontalAlignment="Left" Width="198" Margin="10,34,0,0" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+    </Grid>
+</Window>
