@@ -4,16 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rom_Sorter"
-        mc:Ignorable="d" FontFamily="LED" Background="#FF252525" Width="524" Height="195">
-    <Grid HorizontalAlignment="Left" Width="524" Height="166" VerticalAlignment="Top" Margin="0,0,-8,-2">
+        mc:Ignorable="d" FontFamily="LED" Width="824" Height="195" Background="#FF252525">
+    <Grid HorizontalAlignment="Left" Width="814" Height="166" VerticalAlignment="Top" Margin="0,0,0,-2">
         <Grid.RowDefinitions>
             <RowDefinition Height="18*"/>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="28*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="32*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="153*"/>
-            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="313*"/>
+            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="264*"/>
         </Grid.ColumnDefinitions>
         <CheckBox x:Name="moveFilesChk" Content="Move all files to root folder" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Background="#FFD35C24" Foreground="#FF0197FF" FontFamily="Verdana" Grid.Column="1" Height="15" Width="177"/>
         <Button x:Name="browseDir" Content="Browse" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Background="#FFD35C24" Foreground="Black" Click="browseDir_Click" FontFamily="Verdana" Height="22"/>
@@ -25,8 +26,13 @@
             <ListBoxItem Background="#FF212121" Content="Other"/>
         </ComboBox>
         <Label Content="or enter file path manually" HorizontalAlignment="Left" Margin="85,8,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="#FF0197FF" Height="25" Width="171"/>
-        <Label Content="Select region to keep" Margin="0,0,166,13" FontFamily="Verdana" Foreground="#FF0197FF" Height="27" VerticalAlignment="Bottom" Grid.Row="1"/>
-        <Button x:Name="sortBtn" Content="Sort" Margin="10,10,57,0" Foreground="Black" FontFamily="Verdana" Background="#FFD35C24" Click="sortBtn_Click" Grid.Row="2" Height="28" VerticalAlignment="Top"/>
-        <Label Content="WARNING: The program will&#xD;&#xA;remove all files except files &#xD;&#xA;containing the selected region.&#xD;&#xA;PLACE ALL ROMS IN A &#xD;&#xA;SEPERATE FOLDER" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.162,-0.022" FontFamily="Verdana" Foreground="#FFFF0101" Height="86" VerticalAlignment="Top" HorizontalAlignment="Left" Width="198" Margin="10,34,0,0" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <Label Content="Select region to keep" Margin="0,34,0,0" FontFamily="Verdana" Foreground="#FF0197FF" Grid.Row="1" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147"/>
+        <Button x:Name="sortBtn" Content="Sort" Margin="10,10,0,0" Foreground="Black" FontFamily="Verdana" Background="#FFD35C24" Click="sortBtn_Click" Grid.Row="2" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="291"/>
+        <CheckBox x:Name="DeleteFilesChk" Content="Delete files except selected region" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Background="#FFD35C24" Foreground="#FF0197FF" FontFamily="Verdana" Grid.Column="1" Height="15" Width="223" Grid.Row="1" IsChecked="True"/>
+        <CheckBox x:Name="RecursiveSearchChk" Content="Search recursively" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Background="#FFD35C24" Foreground="#FF0197FF" FontFamily="Verdana" Grid.Column="1" Height="15" Width="223" Grid.Row="1"/>
+        <Button x:Name="addExtBtn" Content="Add" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="75" Background="#FFD35C24" Foreground="Black" FontFamily="Verdana" Height="22" Grid.Column="2" Grid.Row="1" Click="AddExtention"/>
+        <Label Content="Add file extentions" Grid.Column="2" HorizontalAlignment="Left" Margin="10,7,0,0" FontFamily="Verdana" Foreground="#FF0197FF" Width="122" Height="25" VerticalAlignment="Top"/>
+        <TextBox x:Name="extTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="90,4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Background="#FF212121" Foreground="#FF0197FF" FontFamily="Verdana" Text=".example" GotFocus="extTextBox_GotFocus"/>
+        <Button x:Name="openExtFile" Content="Open Extention File" HorizontalAlignment="Left" Margin="90,35,0,0" VerticalAlignment="Top" Width="130" Background="#FFD35C24" Foreground="Black" FontFamily="Verdana" Height="22" Grid.Column="2" Grid.Row="1" Click="OpenExtentionFile"/>
     </Grid>
 </Window>
