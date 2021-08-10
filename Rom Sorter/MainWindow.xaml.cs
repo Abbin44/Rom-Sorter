@@ -18,7 +18,7 @@ namespace Rom_Sorter
         string filePath;
         string extFilePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Extentions.ext";
         bool? searchRecursivley = false;
-        bool deleteFiles = true;
+        bool? deleteFiles = true;
 
         public MainWindow()
         {
@@ -86,7 +86,6 @@ namespace Rom_Sorter
 
         public void RunScan(string region)
         {
-            //TODO: Only search stored file extentions
             List<string> regions = new List<string>();
             List<string> allRegs = new List<string>();
 
@@ -137,7 +136,7 @@ namespace Rom_Sorter
 
             string[] extentions = File.ReadAllLines(extFilePath);
             string[] tokens;
-            bool isROM = false;
+            deleteFiles = deleteFilesChk.IsChecked;
             for (int i = 0; i < extentions.Length; ++i)
             {
                 tokens = extentions[i].Split(';');
@@ -150,7 +149,7 @@ namespace Rom_Sorter
                 {
                     for (int j = 0; j < extentions.Length; j++)
                     {
-                        if (files[i].Contains(extentions[j]))
+                        if (files[i].Contains(extentions[j]) && deleteFiles == true)
                         {
                             keep = regions.Any(files.Contains);
                             if (keep == false)
@@ -164,7 +163,7 @@ namespace Rom_Sorter
                 {
                     for (int j = 0; j < extentions.Length; j++)
                     {
-                        if (files[i].Contains(extentions[j]))
+                        if (files[i].Contains(extentions[j]) && deleteFiles == true)
                         {
                             keep = allRegs.Any(files.Contains);
                             if (keep == true)
