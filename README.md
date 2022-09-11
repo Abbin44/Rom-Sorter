@@ -1,4 +1,8 @@
 # Rom-Sorter
+![](https://img.shields.io/github/downloads/Abbin44/Rom-Sorter/total?color=orange&label=Downloads)
+![](https://img.shields.io/github/stars/Abbin44/Rom-Sorter?color=orange&label=Stars)
+![](https://img.shields.io/github/forks/Abbin44/Rom-Sorter?color=orange&label=Forks)
+
 Look no more! Here is a program to automatically remove all roms that are locked to other regions than yours. This is especially handy when downloading rom-packs with various regions and consoles.
 
 The extention file that comes with the program must stay in the same directory as exe, of course you can create shortcuts! You can open the file in a text editor and see all the extentions it will handle. If yours is not listed you can add them in the program with the Add button and the text box!
